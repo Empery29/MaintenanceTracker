@@ -1,4 +1,5 @@
-﻿using MaintenanceTracker.Api.Data;
+﻿using MaintenanceTracker.Api.Authetication;
+using MaintenanceTracker.Api.Controllers.Data;
 using MaintenanceTracker.Api.Repository.Implementation;
 using MaintenanceTracker.Api.Repository.Interface;
 using MaintenanceTracker.Api.Service.Implementation;
@@ -13,6 +14,7 @@ namespace MaintenanceTracker.Api.Extension
         {
             services.AddScoped<IMaintenenceRepository, MaintenanceRepository>();
             services.AddScoped<IServiceMaintenance, ServiceMaintenance>();
+            services.AddScoped<IAutoManager, AutoManager>();
 
             var connectionString = configuration.GetConnectionString("connect");
             services.AddDbContext<MaintenanceDbContext>(options => options.UseSqlServer(connectionString));

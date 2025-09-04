@@ -1,4 +1,4 @@
-﻿using MaintenanceTracker.Api.Data;
+﻿using MaintenanceTracker.Api.Controllers.Data;
 using MaintenanceTracker.Api.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
@@ -25,7 +25,9 @@ namespace MaintenanceTracker.Api.Repository.Implementation
             await _db.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Maintenance>> GetAll()
+     
+
+        public async Task<IEnumerable<Maintenance>> GetAllAsync()
         {
             return await _db.Maintenances.ToListAsync();
         }

@@ -1,4 +1,4 @@
-﻿using MaintenanceTracker.Api.Data;
+﻿using MaintenanceTracker.Api.Controllers.Data;
 
 namespace MaintenanceTracker.Api.Repository.Interface
 {
@@ -8,7 +8,7 @@ namespace MaintenanceTracker.Api.Repository.Interface
 
         Task<Maintenance> GetByTrackingnumber(string  trackingNumber);
         Task<Maintenance> GetById(int id);
-        Task<IEnumerable<Maintenance>> GetAll();
+        Task<IEnumerable<Maintenance>> GetAllAsync();
         Task<Maintenance> Update(Maintenance Model);
         Task Delete(int id);
 

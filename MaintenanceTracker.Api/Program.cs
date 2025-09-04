@@ -1,12 +1,13 @@
 
-using MaintenanceTracker.Api.Data;
+using MaintenanceTracker.Api.Controllers.Data;
 using MaintenanceTracker.Api.Extension;
 using MaintenanceTracker.Api.Repository.Implementation;
 using MaintenanceTracker.Api.Repository.Interface;
+using MaintenanceTracker.Api.Service.Interface;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using MaintenanceTracker.Api.Service.Interface;
 
 
 namespace MaintenanceTracker.Api
@@ -19,6 +20,18 @@ namespace MaintenanceTracker.Api
 
             // Add services to the container.
 
+
+            builder.Services.AddIdentityCore<APIUser>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 6;
+                options.User.RequireUniqueEmail = true;
+            })
+                             .AddRoles<IdentityRole>()
+                             .AddEntityFrameworkStores<MaintenanceDbContext>();
 
             builder.Services.AddService(builder.Configuration);
            // builder.Services.AddScoped<IMaintenenceRepository, MaintenanceRepository>();

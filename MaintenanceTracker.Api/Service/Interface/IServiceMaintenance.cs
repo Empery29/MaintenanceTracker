@@ -1,5 +1,4 @@
-﻿using MaintenanceTracker.Api.Data;
-using MaintenanceTracker.Api.DTO;
+﻿using MaintenanceTracker.Api.DTO;
 
 namespace MaintenanceTracker.Api.Service.Interface
 {

@@ -1,9 +1,8 @@
-﻿using MaintenanceTracker.Api.Data;
+﻿using MaintenanceTracker.Api.Controllers.Data;
 using MaintenanceTracker.Api.DTO;
 using MaintenanceTracker.Api.Enums;
 using MaintenanceTracker.Api.Repository.Interface;
 using MaintenanceTracker.Api.Service.Interface;
-using System.Threading.Tasks;
 
 namespace MaintenanceTracker.Api.Service.Implementation
 {
@@ -50,7 +49,7 @@ namespace MaintenanceTracker.Api.Service.Implementation
 
         public async Task<IEnumerable<MaintenanceDto>> GetAll()
         {
-            var maintnances = await _repo.GetAll();
+            var maintnances = await _repo.GetAllAsync();
             return maintnances.Select(m => new MaintenanceDto
             {
                 Id = m.Id,

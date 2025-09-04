@@ -1,6 +1,6 @@
 ﻿using MaintenanceTracker.Api.Enums;
 
-namespace MaintenanceTracker.Api.Data
+namespace MaintenanceTracker.Api.Controllers.Data
 {
     public class Maintenance
     {

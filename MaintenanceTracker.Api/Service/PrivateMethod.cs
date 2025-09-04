@@ -1,8 +1,4 @@
-﻿using MaintenanceTracker.Api.Data;
-using MaintenanceTracker.Api.DTO;
-using MaintenanceTracker.Api.Enums;
-
-namespace MaintenanceTracker.Api.Service
+﻿namespace MaintenanceTracker.Api.Service
 {
     public class PrivateMethod
     {
